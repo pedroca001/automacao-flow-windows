@@ -1,0 +1,17 @@
+#!/bin/bash
+set -euo pipefail
+source "$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)/env.sh"
+case "${1:-}" in
+  verificar) exec bash "$FLOW_SYSTEM_DIR/scripts/verificar-pacote.sh" ;;
+  driver) shift; exec browser-harness < "$FLOW_SYSTEM_DIR/scripts/flow_driver.py" ;;
+  download) shift; exec browser-harness < "$FLOW_SYSTEM_DIR/scripts/flow_download.py" ;;
+  *.py)
+    script="$1"; shift
+    if [[ "$script" == */* || ! -f "$FLOW_SYSTEM_DIR/scripts/$script" ]]; then
+      echo "Script não encontrado no pacote: $script" >&2
+      exit 2
+    fi
+    exec python3 "$FLOW_SYSTEM_DIR/scripts/$script" "$@"
+    ;;
+  *) echo 'Uso: ./criativos-run <script.py> [argumentos] | verificar | driver | download'; exit 2 ;;
+esac

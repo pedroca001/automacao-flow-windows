@@ -1,0 +1,6 @@
+#!/bin/bash
+set -euo pipefail
+TASK_DIR="$(cd -- "$(dirname -- "$0")" && pwd)"
+cd "$TASK_DIR"
+source ./env.sh
+exec python scripts/flow_integrado.py "$@"

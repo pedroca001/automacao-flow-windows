@@ -1,0 +1,69 @@
+# Credenciais e configurações privadas
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+cookies*.json
+
+# Dependências, binários locais e caches regeneráveis
+**/.venv/
+**/.local-bin/
+**/.local-cache/
+**/__pycache__/
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+**/*.py[cod]
+**/.DS_Store
+**/*.lock
+**/*.log
+**/*.tmp
+
+# Atalho absoluto para o aplicativo instalado neste Mac
+sistema-criativos-e-vsl/Macro Flow.app
+
+# Backups compactados permanecem no Mac; índices e documentação entram no Git
+_arquivo/**/*.tar.gz
+
+# Execuções e mídia da produção anterior
+sistema-criativos-e-vsl/execucoes-noturnas/
+sistema-criativos-e-vsl/noturno-atual.json
+sistema-criativos-e-vsl/execucoes-personagens/
+sistema-criativos-e-vsl/personagens-atual.json
+sistema-criativos-e-vsl/automacao-personagens/.state/
+sistema-criativos-e-vsl/automacao-personagens/diagnostico/
+sistema-criativos-e-vsl/retomada-macro/clips/
+sistema-criativos-e-vsl/retomada-macro/frames/
+sistema-criativos-e-vsl/retomada-macro/downloads/
+sistema-criativos-e-vsl/retomada-macro/entrega/
+sistema-criativos-e-vsl/retomada-macro/logs/
+sistema-criativos-e-vsl/retomada-macro/prompts/
+sistema-criativos-e-vsl/retomada-macro/qa/
+sistema-criativos-e-vsl/retomada-macro/erros-servidor/
+sistema-criativos-e-vsl/retomada-macro/diagnostico-noturno/
+sistema-criativos-e-vsl/retomada-macro/*.json
+!sistema-criativos-e-vsl/retomada-macro/prompts-ativos.json
+!sistema-criativos-e-vsl/retomada-macro/prompts-aprovados.json
+sistema-criativos-e-vsl/retomada-macro/*.jsonl
+sistema-criativos-e-vsl/retomada-macro/PARAR
+
+# Saídas dos exemplos e montagens
+sistema-criativos-e-vsl/automacao-personagens/movimentos-usuario/
+sistema-criativos-e-vsl/scripts/specs/
+
+# Configuração privada, registros e mídia nunca são publicados.
+backups/
+_arquivo/
+**/config-lote.json
+**/config.local.*
+**/supervisor-status.json
+**/PILOTOS-APROVADOS.json
+**/*.mp4
+**/*.mov
+**/*.png
+**/*.jpg
+**/*.jpeg
+**/*.wav
+**/*.mp3

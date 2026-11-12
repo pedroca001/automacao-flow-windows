@@ -1,0 +1,6 @@
+# Runtime of the night queue, macro and standard creative scripts.
+# The Mac's pip freeze includes optional Torch/RVM and is not a portable lockfile.
+Pillow>=10,<13
+edge-tts>=7,<8
+psutil>=6,<8
+pywinauto>=0.6.9,<0.7; sys_platform == 'win32'

@@ -1,0 +1,49 @@
+#!/bin/bash
+set -euo pipefail
+TASK_DIR="$(cd -- "$(dirname -- "$0")" && pwd)"
+cd "$TASK_DIR"
+source ./env.sh
+mkdir -p .local-bin .local-cache/swift
+TASK_SOURCE="scripts/flow_macro.swift"
+TASK_BINARY=".local-bin/flow-macro"
+if [ ! -x "$TASK_BINARY" ] || [ "$TASK_SOURCE" -nt "$TASK_BINARY" ]; then
+    /usr/bin/xcrun swiftc -O -module-cache-path "$TASK_DIR/.local-cache/swift" \
+        "$TASK_SOURCE" -o "$TASK_BINARY.novo"
+    mv -f "$TASK_BINARY.novo" "$TASK_BINARY"
+fi
+TASK_RUNTIME_APP="$HOME/Library/Application Support/Flow Macro/Macro Flow.app"
+TASK_APP="$TASK_RUNTIME_APP/Contents"
+mkdir -p "$TASK_APP/MacOS"
+if [ ! -f "$TASK_APP/MacOS/flow-macro" ] || [ "$TASK_BINARY" -nt "$TASK_APP/MacOS/flow-macro" ]; then
+    cp "$TASK_BINARY" "$TASK_APP/MacOS/flow-macro.novo"
+    mv -f "$TASK_APP/MacOS/flow-macro.novo" "$TASK_APP/MacOS/flow-macro"
+fi
+cat > "$TASK_APP/Info.plist.novo" <<'PLIST'
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+<key>CFBundleExecutable</key><string>flow-macro</string>
+<key>CFBundleIdentifier</key><string>local.flow.mouse-macro</string>
+<key>CFBundleName</key><string>Macro Flow</string>
+<key>CFBundleDisplayName</key><string>Macro Flow</string>
+<key>CFBundlePackageType</key><string>APPL</string>
+<key>CFBundleVersion</key><string>1</string>
+<key>NSHighResolutionCapable</key><true/>
+</dict></plist>
+PLIST
+/usr/bin/plutil -insert FlowSystemDirectory -string "$TASK_DIR" "$TASK_APP/Info.plist.novo"
+if /usr/bin/cmp -s "$TASK_APP/Info.plist.novo" "$TASK_APP/Info.plist"; then
+    rm "$TASK_APP/Info.plist.novo"
+else
+    mv -f "$TASK_APP/Info.plist.novo" "$TASK_APP/Info.plist"
+fi
+# O bundle deve ser assinado depois de atualizar o executável e o Info.plist.
+# Verificar antes de abrir evita o erro -10810 do LaunchServices.
+if ! /usr/bin/codesign --verify --deep --strict "$TASK_RUNTIME_APP" 2>/dev/null; then
+    /usr/bin/xattr -dr com.apple.FinderInfo "$TASK_RUNTIME_APP" 2>/dev/null || true
+    /usr/bin/xattr -dr com.apple.ResourceFork "$TASK_RUNTIME_APP" 2>/dev/null || true
+    /usr/bin/codesign --force --deep --sign - "$TASK_RUNTIME_APP"
+fi
+/usr/bin/codesign --verify --deep --strict "$TASK_RUNTIME_APP"
+if [ "${1:-}" = "--compilar" ]; then exit 0; fi
+exec "$TASK_APP/MacOS/flow-macro" "$@"

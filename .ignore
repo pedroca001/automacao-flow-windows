@@ -1,0 +1,22 @@
+# Histórico e dependências; não são fontes para tarefas atuais.
+_arquivo/
+**/.venv/
+**/.local-cache/
+**/.local-bin/
+**/__pycache__/
+**/.DS_Store
+**/*.pyc
+# Cópias instaladas; fonte canônica em sistema-criativos-e-vsl/SKILLS/.
+**/.claude/skills/
+# Mídia e evidências: consultar pelo caminho explícito quando necessário.
+sistema-criativos-e-vsl/retomada-macro/clips/
+sistema-criativos-e-vsl/retomada-macro/frames/
+sistema-criativos-e-vsl/retomada-macro/downloads/
+sistema-criativos-e-vsl/retomada-macro/logs/
+sistema-criativos-e-vsl/retomada-macro/prompts/
+sistema-criativos-e-vsl/retomada-macro/qa/
+sistema-criativos-e-vsl/retomada-macro/erros-servidor/
+sistema-criativos-e-vsl/execucoes-noturnas/
+sistema-criativos-e-vsl/execucoes-personagens/
+sistema-criativos-e-vsl/automacao-personagens/.state/
+sistema-criativos-e-vsl/automacao-personagens/diagnostico/

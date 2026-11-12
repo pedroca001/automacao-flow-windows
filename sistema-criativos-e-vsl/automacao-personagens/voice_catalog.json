@@ -1,0 +1,152 @@
+[
+  {
+    "name": "Achernar",
+    "gender": "female",
+    "label": "Achernar Female, soft, high pitch"
+  },
+  {
+    "name": "Achird",
+    "gender": "male",
+    "label": "Achird Male, friendly, mid pitch"
+  },
+  {
+    "name": "Algenib",
+    "gender": "male",
+    "label": "Algenib Male, gravelly, low pitch"
+  },
+  {
+    "name": "Algieba",
+    "gender": "male",
+    "label": "Algieba Male, easy-going, mid-low pitch"
+  },
+  {
+    "name": "Alnilam",
+    "gender": "male",
+    "label": "Alnilam Male, firm, mid-low pitch"
+  },
+  {
+    "name": "Aoede",
+    "gender": "female",
+    "label": "Aoede Female, breezy, mid pitch"
+  },
+  {
+    "name": "Autonoe",
+    "gender": "female",
+    "label": "Autonoe Female, bright, mid pitch"
+  },
+  {
+    "name": "Callirrhoe",
+    "gender": "female",
+    "label": "Callirrhoe Female, easy-going, mid pitch"
+  },
+  {
+    "name": "Charon",
+    "gender": "male",
+    "label": "Charon Male, informative, lower pitch"
+  },
+  {
+    "name": "Despina",
+    "gender": "female",
+    "label": "Despina Female, smooth, mid pitch"
+  },
+  {
+    "name": "Enceladus",
+    "gender": "male",
+    "label": "Enceladus Male, breathy, lower pitch"
+  },
+  {
+    "name": "Erinome",
+    "gender": "female",
+    "label": "Erinome Female, clear, mid pitch"
+  },
+  {
+    "name": "Fenrir",
+    "gender": "male",
+    "label": "Fenrir Male, excitable, younger pitch"
+  },
+  {
+    "name": "Gacrux",
+    "gender": "female",
+    "label": "Gacrux Female, mature, mid pitch"
+  },
+  {
+    "name": "Iapetus",
+    "gender": "male",
+    "label": "Iapetus Male, clear, mid-low pitch"
+  },
+  {
+    "name": "Kore",
+    "gender": "female",
+    "label": "Kore Female, firm, mid pitch"
+  },
+  {
+    "name": "Laomedeia",
+    "gender": "female",
+    "label": "Laomedeia Female, upbeat, mid-high pitch"
+  },
+  {
+    "name": "Leda",
+    "gender": "female",
+    "label": "Leda Female, youthful, mid-high pitch"
+  },
+  {
+    "name": "Orus",
+    "gender": "male",
+    "label": "Orus Male, firm, mid-low pitch"
+  },
+  {
+    "name": "Puck",
+    "gender": "male",
+    "label": "Puck Male, upbeat, mid pitch"
+  },
+  {
+    "name": "Pulcherrima",
+    "gender": "unknown",
+    "label": "Pulcherrima Ungendered, forward, mid-high pitch"
+  },
+  {
+    "name": "Rasalgethi",
+    "gender": "male",
+    "label": "Rasalgethi Male, informative, mid pitch"
+  },
+  {
+    "name": "Sadachbia",
+    "gender": "male",
+    "label": "Sadachbia Male, lively, low pitch"
+  },
+  {
+    "name": "Sadaltager",
+    "gender": "male",
+    "label": "Sadaltager Male, knowledgeable, mid pitch"
+  },
+  {
+    "name": "Schedar",
+    "gender": "male",
+    "label": "Schedar Male, even, mid-low pitch"
+  },
+  {
+    "name": "Sulafat",
+    "gender": "female",
+    "label": "Sulafat Female, warm, mid pitch"
+  },
+  {
+    "name": "Umbriel",
+    "gender": "male",
+    "label": "Umbriel Male, smooth, lower pitch"
+  },
+  {
+    "name": "Vindemiatrix",
+    "gender": "female",
+    "label": "Vindemiatrix Female, gentle, mid pitch"
+  },
+  {
+    "name": "Zephyr",
+    "gender": "female",
+    "label": "Zephyr Female, bright, mid-high pitch"
+  },
+  {
+    "name": "Zubenelgenubi",
+    "gender": "male",
+    "label": "Zubenelgenubi Male, casual, mid-low pitch"
+  }
+]

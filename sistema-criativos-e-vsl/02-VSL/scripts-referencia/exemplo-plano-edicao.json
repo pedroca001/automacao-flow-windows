@@ -1,0 +1,26 @@
+{
+  "_leia": "PLANO DE EDIÇÃO da VSL (02-VSL/06-EDICAO-DINAMICA-OBRIGATORIA.md §4) — o que montar_vsl.py executa. Uma entrada por cena, na ordem. Cena sem 'efeitos' = plano falado → punch-in automático se > 4,6s. Regras: split na cena 1-2 · efeito real a cada 2-3 cenas nos 2 primeiros minutos e no máximo a cada 5-6 no corpo · todo depoimento com par · toda prova com insert (e rvm quando a expert explica por cima) · preço em overlay na zona do peito, sai ANTES do CTA. Caminhos relativos à pasta da VSL.",
+  "idioma": "pt", "saida": "VSL-EXEMPLO_final.mp4", "work": "work",
+  "cortadas": [],
+  "cenas": [
+    { "n": 1, "clip": "clips/cena_1.mp4", "fala": "Aperta aqui na sua barriga agora, e me diz se está mole ou se está dura, porque isso muda tudo.",
+      "efeitos": [ { "tipo": "split", "broll": ["broll/b01.mp4", "broll/b02.mp4"] } ] },
+    { "n": 2, "clip": "clips/cena_2.mp4", "fala": "Se está mole e caída, presta atenção nos próximos minutos, porque o problema não é o que você come.",
+      "efeitos": [ { "tipo": "flash", "png": "pares/maria_antes.png", "t": 0.0, "dur": 0.8 } ] },
+    { "n": 3, "clip": "clips/cena_3.mp4", "fala": "Eu descobri isso por acaso, numa manhã, quando a minha mãe me mostrou uma jarra de água na pia.",
+      "efeitos": [ { "tipo": "cutaway", "src": "broll/b03.mp4" } ] },
+    { "n": 4, "clip": "clips/cena_4.mp4", "fala": "E o que aconteceu com ela nas semanas seguintes eu nunca tinha visto em vinte anos de consultório." },
+    { "n": 5, "clip": "clips/cena_5.mp4", "fala": "Um estudo publicado em dois mil e vinte e três mostrou exatamente o mesmo mecanismo em quase quatrocentas mulheres.",
+      "efeitos": [ { "tipo": "insert", "png": "inserts/estudo.png", "dur": 5 } ] },
+    { "n": 6, "clip": "clips/cena_6.mp4", "fala": "Olha o gráfico: em três semanas, a medida da cintura caiu sem mudar uma única refeição do dia.",
+      "efeitos": [ { "tipo": "rvm", "bg": "inserts/estudo.png" } ],
+      "_nota": "rvm exige RVM_DIR (RobustVideoMatting). Sem ele, troque por insert." },
+    { "n": 7, "clip": "clips/cena_7.mp4", "fala": "A Maria, de cinquenta e oito anos, fez a mesma coisa. Essa era ela em janeiro, e essa é ela hoje.",
+      "efeitos": [ { "tipo": "par", "antes": "pares/maria_antes.png", "depois": "pares/maria_depois.png" } ], "xfade": true },
+    { "n": 8, "clip": "clips/cena_8.mp4", "fala": "E é por isso que eu montei um passo a passo simples, de sete dias, que qualquer mulher consegue seguir em casa." }
+  ],
+  "overlays": [
+    { "png": "overlays/preco.png", "x": "(W-w)/2", "y": 1120, "ini": 40.0, "fim": 48.0 },
+    { "png": "overlays/cta.png",   "x": "(W-w)/2", "y": 1300, "ini": 48.5, "fim": 60.0 }
+  ]
+}

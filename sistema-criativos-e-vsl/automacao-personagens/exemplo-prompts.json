@@ -1,0 +1,25 @@
+{
+  "prompt_sets": {
+    "audio_x": {
+      "genders": ["female", "male"],
+      "prompts": [
+        {"text": "Exemplo de cena um do audio X. Substitua pelo prompt completo aprovado.", "spoken": "Frase um do audio X."},
+        {"text": "Exemplo de cena dois do audio X. Substitua pelo prompt completo aprovado.", "spoken": "Frase dois do audio X."},
+        {"text": "Exemplo de cena tres do audio X. Substitua pelo prompt completo aprovado.", "spoken": "Frase tres do audio X."},
+        {"text": "Exemplo de cena quatro do audio X. Substitua pelo prompt completo aprovado.", "spoken": "Frase quatro do audio X."},
+        {"text": "Exemplo de cena cinco do audio X. Substitua pelo prompt completo aprovado.", "spoken": "Frase cinco do audio X."}
+      ]
+    },
+    "audio_y": {
+      "genders": ["female", "male"],
+      "prompts": [
+        "Exemplo de cena um do audio Y. Substitua pelo prompt completo aprovado.",
+        "Exemplo de cena dois do audio Y. Substitua pelo prompt completo aprovado.",
+        "Exemplo de cena tres do audio Y. Substitua pelo prompt completo aprovado.",
+        "Exemplo de cena quatro do audio Y. Substitua pelo prompt completo aprovado.",
+        "Exemplo de cena cinco do audio Y. Substitua pelo prompt completo aprovado."
+      ]
+    }
+  },
+  "distribution": {"mode": "quota", "quotas": {"audio_x": 5, "audio_y": 5}, "seed": 21}
+}
